@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getProductById, Product } from 'home/products';
 
 export const ProductInfo = () => {
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState<Product | null>(null);
   const id = 1;
 
   useEffect(() => {
