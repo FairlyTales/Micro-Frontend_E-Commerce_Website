@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Post, Request, UseGuards } from '@nestjs/common';
 import products, { Product } from '../../products';
 import { JwtAuthGuard } from '../../auth/jwt-auth.guard';
 
@@ -52,5 +52,12 @@ export class CartController {
     }
 
     return cart;
+  }
+
+  @Delete()
+  @UseGuards(JwtAuthGuard)
+  async destroy(@Request() req): Promise<Cart> {
+    this.carts[req.user.userId] = { cartItems: [] };
+    return this.carts[req.user.userId];
   }
 }
