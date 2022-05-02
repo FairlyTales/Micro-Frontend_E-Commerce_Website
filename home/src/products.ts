@@ -11,7 +11,7 @@ export interface Product {
 
 export const getProducts = () => fetch(`${API}/products`).then((res) => res.json());
 
-export const getProductById = (id: number) => fetch(`${API}/products/${id}`).then((res) => res.json());
+export const getProductById = (id: number): Promise<Product> => fetch(`${API}/products/${id}`).then((res) => res.json());
 
 export const currency = new Intl.NumberFormat('en-US', {
   style: 'currency',
