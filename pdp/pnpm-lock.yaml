@@ -19,6 +19,7 @@ specifiers:
   react-dom: ^17.0.2
   react-query: ^3.38.0
   react-router-dom: ^6.3.0
+  remixicon: ^2.5.0
   style-loader: ^3.3.0
   tailwindcss: ^2.0.2
   typescript: ^4.5.2
@@ -32,6 +33,7 @@ dependencies:
   react-dom: 17.0.2_react@17.0.2
   react-query: 3.38.0_sfoxds7t5ydpegc3knd667wn6m
   react-router-dom: 6.3.0_sfoxds7t5ydpegc3knd667wn6m
+  remixicon: 2.5.0
 
 devDependencies:
   '@babel/core': 7.17.10
@@ -3891,6 +3893,10 @@ packages:
     resolution: {integrity: sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=}
     engines: {node: '>= 0.10'}
     dev: true
+
+  /remixicon/2.5.0:
+    resolution: {integrity: sha512-q54ra2QutYDZpuSnFjmeagmEiN9IMo56/zz5dDNitzKD23oFRw77cWo4TsrAdmdkPiEn8mxlrTqxnkujDbEGww==}
+    dev: false
 
   /remove-accents/0.4.2:
     resolution: {integrity: sha1-CkPTqq4egNuRngeuJUsoXZ4ce7U=}

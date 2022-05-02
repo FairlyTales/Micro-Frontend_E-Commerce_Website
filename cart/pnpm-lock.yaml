@@ -17,6 +17,7 @@ specifiers:
   postcss-loader: ^4.1.0
   react: ^17.0.2
   react-dom: ^17.0.2
+  remixicon: ^2.5.0
   rxjs: ^7.5.5
   style-loader: ^3.3.0
   tailwindcss: ^2.0.2
@@ -29,6 +30,7 @@ dependencies:
   '@babel/runtime': 7.17.9
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  remixicon: 2.5.0
   rxjs: 7.5.5
 
 devDependencies:
@@ -3811,6 +3813,10 @@ packages:
     resolution: {integrity: sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=}
     engines: {node: '>= 0.10'}
     dev: true
+
+  /remixicon/2.5.0:
+    resolution: {integrity: sha512-q54ra2QutYDZpuSnFjmeagmEiN9IMo56/zz5dDNitzKD23oFRw77cWo4TsrAdmdkPiEn8mxlrTqxnkujDbEGww==}
+    dev: false
 
   /renderkid/3.0.0:
     resolution: {integrity: sha512-q/7VIQA8lmM1hF+jn+sFSPWGlMkSAeNYcPLmDQx2zzuiDfaLrOmumR8iaUKlenFgh0XRPIUeSPlH3A+AW3Z5pg==}
