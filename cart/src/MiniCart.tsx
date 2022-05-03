@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react';
-
 import { cart, CartItem, clearCart } from './cart';
 import { currency } from 'home/products';
 
 export const MiniCart = () => {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const [items, setItems] = useState<CartItem[]>();
   const [showCart, setShowCart] = useState<boolean>(false);
 
   useEffect(() => {
-    if (cart.value?.cartItems) {
-      cart.value?.cartItems && setItems(cart.value?.cartItems);
+    console.log(cart.value);
 
-      cart.subscribe((c) => {
-        c?.cartItems && setItems(c?.cartItems);
-      });
-    }
-  }, []);
+    setItems(cart.value?.cartItems);
+    cart.subscribe((cart) => {
+      setItems(cart?.cartItems);
+    });
+  }, [cart.value]);
 
   if (!items) return null;
 

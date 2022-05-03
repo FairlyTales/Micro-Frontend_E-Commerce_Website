@@ -20,7 +20,11 @@ export const useLoggedIn = () => {
 
   useEffect(() => {
     setLoggedIn(Boolean(jwt.value));
-  }, []);
+
+    jwt.subscribe(() => {
+      setLoggedIn(!!jwt.value);
+    });
+  }, [cart]);
 
   return loggedIn;
 };
