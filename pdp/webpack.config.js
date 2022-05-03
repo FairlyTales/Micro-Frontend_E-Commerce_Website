@@ -47,6 +47,7 @@ module.exports = {
         home: 'home@http://localhost:3000/remoteEntry.js',
         pdp: 'pdp@http://localhost:3001/remoteEntry.js',
         cart: 'cart@http://localhost:3002/remoteEntry.js',
+        addToCart: 'addToCart@http://localhost:3003/remoteEntry.js',
       },
       exposes: {},
       shared: {
