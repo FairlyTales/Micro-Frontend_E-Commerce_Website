@@ -7,9 +7,8 @@ export const MiniCart = () => {
   const [showCart, setShowCart] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log(cart.value);
-
     setItems(cart.value?.cartItems);
+
     cart.subscribe((cart) => {
       setItems(cart?.cartItems);
     });
