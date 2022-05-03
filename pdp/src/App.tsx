@@ -6,6 +6,7 @@ import { ProductInfo } from './ProductInfo';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import 'remixicon/fonts/remixicon.css';
 import './index.scss';
 
 const queryClient = new QueryClient();

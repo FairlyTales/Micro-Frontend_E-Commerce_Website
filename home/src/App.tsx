@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import Header from './Header';
 import Footer from './Footer';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import './index.scss';
 import { ProductList } from './ProductList';
+
+import 'remixicon/fonts/remixicon.css';
+import './index.scss';
 
 const queryClient = new QueryClient();
 
