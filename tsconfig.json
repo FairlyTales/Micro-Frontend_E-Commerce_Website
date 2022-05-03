@@ -61,6 +61,12 @@
       "home/products": [
         "home/src/products"
       ],
+      "home/ProductList": [
+        "home/src/ProductList"
+      ],
+      "pdp/ProductInfo": [
+        "pdp/src/ProductInfo"
+      ],
       "cart/cart": [
         "cart/src/cart"
       ],
