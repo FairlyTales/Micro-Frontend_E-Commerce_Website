@@ -21,6 +21,7 @@ export const Login = () => {
           style={{
             width: 300,
             top: '2rem',
+            left: -250,
           }}
         >
           <input
