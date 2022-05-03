@@ -60,6 +60,18 @@
       ],
       "home/products": [
         "home/src/products"
+      ],
+      "cart/cart": [
+        "cart/src/cart"
+      ],
+      "cart/Login": [
+        "cart/src/Login"
+      ],
+      "cart/MiniCart": [
+        "cart/src/MiniCart"
+      ],
+      "cart/CartContent": [
+        "cart/src/CartContent"
       ]
     },
     /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
