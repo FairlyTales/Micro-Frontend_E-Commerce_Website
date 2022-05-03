@@ -1,10 +1,19 @@
 import { BehaviorSubject } from 'rxjs';
 import { useEffect, useState } from 'react';
+import { Product } from 'home/products';
+
+export interface CartItem extends Product {
+  quantity: number;
+}
+
+export interface Cart {
+  cartItems: CartItem[];
+}
 
 const API = 'http://localhost:8080';
 
-export const jwt = new BehaviorSubject(null);
-export const cart = new BehaviorSubject(null);
+export const jwt = new BehaviorSubject<string>('');
+export const cart = new BehaviorSubject<Cart | null>(null);
 
 export const useLoggedIn = () => {
   const [loggedIn, setLoggedIn] = useState<boolean>(Boolean(jwt.value));
@@ -16,7 +25,7 @@ export const useLoggedIn = () => {
   return loggedIn;
 };
 
-export const getCart = () =>
+export const getCart = (): Promise<Cart> =>
   fetch(`${API}/cart`, {
     headers: {
       'Content-Type': 'application/json',
@@ -26,10 +35,11 @@ export const getCart = () =>
     .then((res) => res.json())
     .then((res) => {
       cart.next(res);
+
       return res;
     });
 
-export const addToCart = (id: string) =>
+export const addToCart = (id: string): Promise<Cart> =>
   fetch(`${API}/cart`, {
     method: 'POST',
     headers: {
@@ -40,10 +50,10 @@ export const addToCart = (id: string) =>
   })
     .then((res) => res.json())
     .then(() => {
-      getCart();
+      return getCart();
     });
 
-export const clearCart = () =>
+export const clearCart = (): Promise<Cart> =>
   fetch(`${API}/cart`, {
     method: 'DELETE',
     headers: {
@@ -53,7 +63,7 @@ export const clearCart = () =>
   })
     .then((res) => res.json())
     .then(() => {
-      getCart();
+      return getCart();
     });
 
 export const login = (username: string, password: string): Promise<string> =>
@@ -72,5 +82,6 @@ export const login = (username: string, password: string): Promise<string> =>
       // updating jwt content with a received token
       jwt.next(data.access_token);
       getCart();
+
       return data.access_token;
     });
