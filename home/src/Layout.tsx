@@ -11,18 +11,18 @@ import { ProductInfo } from 'pdp/ProductInfo';
 
 export function Layout() {
   return (
-    <div className='text-3xl mx-auto max-w-6xl'>
-      <Header />
-      <div className='my-10'>
-        <Router>
+    <Router>
+      <div className='text-3xl mx-auto max-w-6xl'>
+        <Header />
+        <div className='my-10'>
           <Routes>
             <Route path='/' element={<ProductList />} />
             <Route path='/product/:id' element={<ProductInfo />} />
             <Route path='/cart' element={<CartContent />} />
           </Routes>
-        </Router>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }

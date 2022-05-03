@@ -2,6 +2,7 @@ import React from 'react';
 import { currency, getProducts, Product } from './products';
 import { useQuery } from 'react-query';
 import { addToCart, useLoggedIn } from 'cart/cart';
+import { Link } from 'react-router-dom';
 
 export const ProductList = () => {
   const { data: products, status } = useQuery('products', getProducts);
@@ -16,12 +17,14 @@ export const ProductList = () => {
         products.map((product: Product) => (
           <li key={product.id} className='flex justify-center'>
             <div>
-              <a>
+              <Link to={`/product/${product.id}`}>
                 <img src={product.image} alt={product.name} />
-              </a>
-              <h5 className='font-bold mt-1'>
-                {product.name}
-              </h5>
+              </Link>
+              <Link to={`/product/${product.id}`}>
+                <h5 className='font-bold mt-1'>
+                  {product.name}
+                </h5>
+              </Link>
               <p className='text-md mt-1'>
                 {currency.format(product.price)}
               </p>
